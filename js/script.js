@@ -1,40 +1,131 @@
-emailjs.init("YOUR_PUBLIC_KEY"); // from emailjs
+// Initialize EmailJS (IMPORTANT)
+window.onload = function(){
 
-let total = 0;
+emailjs.init("fBhht2gNbC3DjBRC1");
+
+}
+
+
+
 let cart = [];
+let total = 0;
 
-function addItem(name, price){
-    cart.push(name);
-    total += price;
 
-    let li = document.createElement("li");
-    li.innerText = name + " - ₹" + price;
+// ADD / REMOVE ITEM FUNCTION
 
-    document.getElementById("cartItems").appendChild(li);
-    document.getElementById("total").innerText = total;
+function toggleItem(button, name, price){
+
+if(button.classList.contains("added")){
+
+button.classList.remove("added");
+button.innerHTML = "Add Item ⊕";
+
+cart = cart.filter(item => item.name !== name);
+total -= price;
+
+}
+else{
+
+button.classList.add("added");
+button.innerHTML = "Remove Item ⊖";
+
+cart.push({name, price});
+total += price;
+
 }
 
-function scrollToBooking(){
-    document.getElementById("services").scrollIntoView({behavior:"smooth"});
+updateCart();
+
 }
+
+
+
+// UPDATE CART TABLE
+
+function updateCart(){
+
+let table = document.getElementById("cartTable");
+
+table.innerHTML = "";
+
+cart.forEach((item,index)=>{
+
+table.innerHTML +=
+`
+<tr>
+<td>${index+1}</td>
+<td>${item.name}</td>
+<td>₹${item.price}</td>
+</tr>
+`;
+
+});
+
+document.getElementById("total").innerText = total;
+
+}
+
+
+
+// EMAIL SEND FUNCTION (MAIN PART)
 
 function sendEmail(){
 
-let name = document.getElementById("name").value;
-let email = document.getElementById("email").value;
-let phone = document.getElementById("phone").value;
+let name =
+document.querySelector('input[placeholder="Full Name"]').value;
+
+let email =
+document.querySelector('input[placeholder="Email ID"]').value;
+
+let phone =
+document.querySelector('input[placeholder="Phone Number"]').value;
+
+
+// validation
+
+if(name=="" || email=="" || phone==""){
+
+alert("Please fill all fields");
+
+return;
+
+}
+
+
+// services list
+
+let services =
+cart.map(item => item.name).join(", ");
+
+
+// params to send
 
 let params = {
-    name: name,
-    email: email,
-    phone: phone,
-    services: cart.join(", "),
-    total: total
+
+name: name,
+email: email,
+phone: phone,
+services: services,
+total: total
+
 };
 
-emailjs.send("YOUR_SERVICE_ID","YOUR_TEMPLATE_ID",params)
-.then(()=>{
-    document.getElementById("msg").innerText =
-    "Thank you For Booking the Service We will get back to you soon!";
+
+// send email
+
+emailjs.send("service_ny5bvpl","template_3yrczp3",params)
+
+.then(function(response){
+
+document.getElementById("successMsg").innerText =
+"Thank you For Booking the Service We will get back to you soon!";
+
+})
+
+.catch(function(error){
+
+alert("Email failed to send");
+
 });
+
 }

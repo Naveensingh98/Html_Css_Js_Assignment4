@@ -1,37 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Laundry Services Web App </title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/grid.css">
-    <link rel="stylesheet" href="css/normalize.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Laundry Services Web App</title>
+
+<link rel="stylesheet" href="css/normalize.css">
+<link rel="stylesheet" href="css/grid.css">
+<link rel="stylesheet" href="css/style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 </head>
+
 <body>
-<!-- ================= Navbar ================= -->
-    <header class="navbar section">
-  <div class="row group">
 
-    <!-- LOGO LEFT -->
-    <div class="col span_1_of_3 logo">
-      <img src="img/logo loundry.webp" alt="Logo">
-    </div>
 
-    <!-- MENU CENTER -->
-    <div class="col span_1_of_3 menu center-menu">
-      <a href="#">Home</a>
-      <a href="#">Services</a>
-      <a href="#">About Us</a>
-      <a href="#">Contact Us</a>
-    </div>
+<!-- ================= NAVBAR ================= -->
 
-    <!-- USER RIGHT -->
-    <div class="col span_1_of_3 user-box">
-      <span class="user">Naveen</span>
-    </div>
+<header class="navbar section">
+<div class="row group">
 
-  </div>
+<div class="col span_1_of_3 logo">
+<img src="img/logo loundry.webp" alt="Logo">
+</div>
+
+<div class="col span_1_of_3 center-menu">
+<a href="#">Home</a>
+<a href="#">Services</a>
+<a href="#">About Us</a>
+<a href="#">Contact Us</a>
+</div>
+
+<div class="col span_1_of_3 user-box">
+<span class="user">Naveen</span>
+</div>
+
+</div>
 </header>
 
 
@@ -39,76 +45,265 @@
 <!-- ================= HERO ================= -->
 
 <section class="hero section">
-  <div class="row group">
+<div class="row group">
 
-    <!-- LEFT -->
+<div class="col span_1_of_2 hero-left">
 
-    <div class="col span_1_of_2 hero-left">
+<h1>
+Revitalize Your Clothes with Expert <br>
+<span>Laundry Services!</span>
+</h1>
 
-      <h1>
-        Revitalize Your Clothes with Expert <br>
-        <span>Laundry Services!</span>
-      </h1>
+<p>
+From premium dry cleaning to swift wash & fold,
+we deliver care and convenience.
+</p>
 
-      <p>
-        From premium dry cleaning to swift wash & fold, 
-        we deliver care and convenience.
-      </p>
-
-      <button class="hero-btn">
-        Book a Service Today
-      </button>
-
-    </div>
+<button class="hero-btn">
+    <i class="fas fa-calendar-check"></i>
+    Book a service today!
+</button>
 
 
-    <!-- RIGHT -->
+</div>
 
-    <div class="col span_1_of_2 hero-right">
 
-      <img src="img/image.png" alt="Laundry">
+<div class="col span_1_of_2 hero-right">
+<img src="img/image.png" alt="Laundry">
+</div>
 
-    </div>
-
-  </div>
+</div>
 </section>
 
-    <!-- ================= ACHIEVEMENTS BAR ================= -->
+
+
+<!-- ================= ACHIEVEMENTS ================= -->
 
 <section class="overview section">
 
-  <div class="row group">
+<div class="row group">
 
-    <!-- LEFT TITLE -->
+<div class="col span_1_of_4 achievement-title">
+Our Achievements
+</div>
 
-    <div class="col span_1_of_4 achievement-title">
-      Our Achievements
-    </div>
+<div class="col span_3_of_4 achievement-stats">
 
-    <!-- RIGHT STATS -->
+<div class="col span_1_of_3 stat">
+<h3>15+</h3>
+<p>Laundry Services</p>
+</div>
 
-    <div class="col span_3_of_4 achievement-stats">
+<div class="col span_1_of_3 stat">
+<h3>240+</h3>
+<p>Happy Customers</p>
+</div>
 
-      <div class="col span_1_of_3 stat">
-        <h3>15+</h3>
-        <p>Laundry Services</p>
-      </div>
+<div class="col span_1_of_3 stat">
+<h3>2+ Yrs</h3>
+<p>Experience</p>
+</div>
 
-      <div class="col span_1_of_3 stat">
-        <h3>240+</h3>
-        <p>Happy Customers</p>
-      </div>
+</div>
 
-      <div class="col span_1_of_3 stat">
-        <h3>2+ Yrs</h3>
-        <p>Experience</p>
-      </div>
-
-    </div>
-
-  </div>
+</div>
 
 </section>
+
+
+
+<!-- ================= BOOKING SECTION ================= -->
+
+<section class="booking section">
+
+<div class="row group">
+
+
+<!-- LEFT BOX -->
+
+<div class="col span_1_of_2">
+
+<div class="services-box">
+
+<h2 class="box-heading">Our Services</h2>
+
+<p class="box-subheading">
+Click On The Add To Cart Button To Add The Services To Your Cart
+</p>
+
+
+
+<div class="service-item">
+
+<span>
+<i class="fas fa-shirt service-icon"></i>
+Dry Cleaning
+</span>
+
+<span class="price">₹200.00</span>
+
+<button onclick="toggleItem(this,'Dry Cleaning',200)" class="add-btn">
+Add Item ⊕
+</button>
+
+</div>
+
+
+
+<div class="service-item">
+
+<span>
+<i class="fas fa-basket-shopping service-icon"></i>
+Wash & Fold
+</span>
+
+<span class="price">₹100.00</span>
+
+<button onclick="toggleItem(this,'Wash & Fold',100)" class="add-btn">
+Add Item ⊕
+</button>
+
+</div>
+
+
+
+<div class="service-item">
+
+<span>
+<i class="fas fa-temperature-high service-icon"></i>
+Ironing
+</span>
+
+<span class="price">₹30.00</span>
+
+<button onclick="toggleItem(this,'Ironing',30)" class="add-btn">
+Add Item ⊕
+</button>
+
+</div>
+
+
+
+<div class="service-item">
+
+<span>
+<i class="fas fa-spray-can-sparkles service-icon"></i>
+Stain Removal
+</span>
+
+<span class="price">₹500.00</span>
+
+<button onclick="toggleItem(this,'Stain Removal',500)" class="add-btn">
+Add Item ⊕
+</button>
+
+</div>
+
+
+
+<div class="service-item">
+
+<span>
+<i class="fas fa-hands-bubbles service-icon"></i>
+Leather & Suede Cleaning
+</span>
+
+<span class="price">₹999.00</span>
+
+<button onclick="toggleItem(this,'Leather & Suede Cleaning',999)" class="add-btn">
+Add Item ⊕
+</button>
+
+</div>
+
+
+
+<div class="service-item">
+
+<span>
+<i class="fas fa-person-dress service-icon"></i>
+Wedding Dress Cleaning
+</span>
+
+<span class="price">₹2800.00</span>
+
+<button onclick="toggleItem(this,'Wedding Dress Cleaning',2800)" class="add-btn">
+Add Item ⊕
+</button>
+
+</div>
+
+
+<p class="cart-info">
+    <i class="fas fa-info-circle info-icon"></i>
+    Add the items to the cart and book now
+</p>
+
+
+</div>
+</div>
+
+
+
+<!-- RIGHT BOX -->
+
+<div class="col span_1_of_2">
+
+<div class="cart-box">
+
+<h2 class="box-heading">Added Items</h2>
+
+
+<table>
+
+<thead>
+
+<tr>
+<th>S.No</th>
+<th>Service Name</th>
+<th>Price</th>
+</tr>
+
+</thead>
+
+<tbody id="cartTable">
+</tbody>
+
+</table>
+
+
+
+<h4 class="total">
+Total Amount ₹<span id="total">0</span>
+</h4>
+
+
+
+<h3 class="book-heading">Book Now</h3>
+
+<input type="text" placeholder="Full Name">
+<input type="email" placeholder="Email ID">
+<input type="text" placeholder="Phone Number">
+
+<button class="book-btn" onclick="sendEmail()">
+Book Now
+</button>
+
+<p id="successMsg"></p>
+
+
+
+</div>
+</div>
+
+
+</div>
+</section>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script src="js/script.js"></script>
+
 
 </body>
 </html>

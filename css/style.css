@@ -12,9 +12,9 @@ body{
 }
 
 .logo img{
-    height: 100px;   /* adjust size */
+    height:40px;      /* correct navbar size */
     width:auto;
-    vertical-align:middle;
+    object-fit:contain;
 }
 
 
@@ -117,3 +117,246 @@ body{
     opacity:0.9;
 }
 
+/* ========== NAVBAR FIXED ALIGNMENT ========== */
+
+.navbar .row{
+    display:flex;
+    align-items:center;
+}
+
+/* LOGO LEFT */
+
+.logo{
+    display:flex;
+    align-items:center;
+}
+
+.logo img{
+    height:60px;
+    width:auto;
+    flex:1;
+
+}
+
+
+/* MENU CENTER */
+
+.center-menu{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:25px;
+}
+
+.center-menu a{
+    text-decoration:none;
+    color:#333;
+    font-size:14px;
+}
+
+.user{
+    background:#eaf1ff;
+    padding:6px 14px;
+    border-radius:15px;
+    font-size:13px;
+}
+
+/* user right */
+.user-box{
+    flex:1;
+    display:flex;
+    justify-content:flex-end;
+}
+/* BOOKING SECTION */
+
+.booking{
+background:#f5f7fb;
+padding:50px 0;
+}
+
+.services-box, .cart-box{
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Service list */
+
+.service-item{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin:15px 0;
+}
+
+.price{
+color:#4a90ff;
+font-weight:bold;
+}
+
+.service-item button{
+background:#e6ecff;
+border:none;
+padding:6px 12px;
+border-radius:6px;
+cursor:pointer;
+}
+
+/* Table */
+
+table{
+width:100%;
+margin-top:10px;
+border-collapse:collapse;
+}
+
+table th, table td{
+padding:8px;
+text-align:left;
+border-bottom:1px solid #ddd;
+}
+
+/* Total */
+
+.cart-box h4{
+margin-top:15px;
+}
+
+/* Form */
+
+.cart-box input{
+width:100%;
+padding:10px;
+margin:8px 0;
+border:1px solid #ddd;
+border-radius:6px;
+}
+
+.book-btn{
+width:100%;
+padding:12px;
+background:#4a90ff;
+color:white;
+border:none;
+border-radius:8px;
+cursor:pointer;
+margin-top:10px;
+}
+.add-btn{
+background:#e6ecff;
+color:#333;
+border:none;
+padding:8px 14px;
+border-radius:6px;
+cursor:pointer;
+}
+
+.add-btn.added{
+background:#ffe6e6;
+color:#d11a2a;
+}
+.service-icon{
+    margin-right:10px;
+    color:#4a90ff;
+    font-size:16px;
+    width:20px;
+}
+
+/* SIDE BY SIDE BOXES */
+
+.services-box,
+.cart-box{
+    background:white;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.08);
+    min-height:420px;
+}
+
+
+/* CENTER HEADINGS */
+
+.box-heading{
+    text-align:left;
+    font-weight:bold;
+    font-size:22px;
+    margin-bottom:5px;
+}
+
+.box-subheading{
+    text-align:left;
+    font-size:13px;
+    color:#777;
+    margin-bottom:15px;
+}
+.box-headin{
+    text-align:center;
+    font-weight:bold;
+    font-size:22px;
+    margin-bottom:5px;
+}
+
+/* BOOK NOW HEADING */
+
+.book-heading{
+    text-align:center;
+    font-weight:bold;
+    margin-top:20px;
+    margin-bottom:10px;
+}
+
+
+/* SPACE BETWEEN LEFT AND RIGHT BOX */
+
+.booking .col{
+    padding:10px;
+}
+/* BOOKING SECTION SIDE BY SIDE FIX */
+
+.booking .row{
+    display:flex;
+    gap:20px;              /* space between boxes */
+    align-items:flex-start;
+}
+
+
+/* LEFT AND RIGHT BOX WIDTH */
+
+.services-box,
+.cart-box{
+    width:100%;
+}
+
+
+/* IMPORTANT: column width fix */
+
+.booking .col{
+    flex:1;
+}
+/* Line below the info text */
+
+.box-subheading{
+    border-bottom:1px solid #e6e6e6;
+    padding-bottom:12px;
+    margin-bottom:10px;
+}
+/* Divider line above bottom info */
+
+.cart-info{
+    border-top:1px solid #e6e6e6;
+    margin-top:15px;
+    padding-top:12px;
+
+    font-size:14px;
+    color:#4a90ff;
+}
+
+
+/* info icon */
+
+.info-icon{
+    margin-right:8px;
+    font-size:14px;
+    color:#4a90ff;
+}
