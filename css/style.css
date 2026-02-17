@@ -82,40 +82,61 @@ body{
 
 /* ========== ACHIEVEMENTS BAR ========== */
 
+/* ================= ACHIEVEMENTS SECTION ================= */
+
 .overview{
     background:#4a90ff;
     color:white;
-    padding:25px 0;
+    padding:30px 0;
 }
 
-/* Left text */
+
+/* FIX TITLE */
 
 .achievement-title{
     font-size:18px;
     font-weight:bold;
-    display:flex;
-    align-items:center;
-    margin: 10px;
-    padding-top: 20px;
+
+    /* REMOVE flex */
+    display:block;
+
+    /* REMOVE margin & padding */
+    margin:0;
+    padding:0;
+
+    line-height:60px; /* vertical align */
 }
 
-/* Right stats container */
+
+/* RIGHT CONTAINER */
 
 .achievement-stats{
     text-align:center;
 }
 
-/* Each stat */
+
+/* EACH STAT */
+
+.stat{
+    text-align:center;
+}
+
+
+/* NUMBER */
 
 .stat h3{
-    font-size:22px;
-    margin-bottom:4px;
+    font-size:24px;
+    margin-bottom:5px;
 }
+
+
+/* TEXT */
 
 .stat p{
     font-size:13px;
     opacity:0.9;
 }
+
 
 /* ========== NAVBAR FIXED ALIGNMENT ========== */
 
@@ -359,4 +380,348 @@ color:#d11a2a;
     margin-right:8px;
     font-size:14px;
     color:#4a90ff;
+}
+
+
+.quality-box h3{
+font-size:16px;
+font-weight:bold;
+margin-bottom:8px;
+}
+
+
+.quality-box p{
+font-size:13px;
+color:#777;
+line-height:1.5;
+}
+/* ================= QUALITY SECTION ================= */
+
+.quality{
+    width:100%;
+    padding:60px 0;
+    background:#f8f9fb;
+
+    display:flex;
+    justify-content:center;   /* center whole section */
+}
+
+
+/* ROW CENTER */
+
+.quality-row{
+    display:flex;
+    justify-content:center;   /* center all boxes */
+    align-items:flex-start;
+
+    gap:60px;                 /* space between items */
+
+    max-width:1100px;        /* keep section centered */
+    width:100%;
+}
+
+
+/* REMOVE FLOAT FROM GRID */
+
+.quality-row .col{
+    float:none;
+    margin:0;
+}
+
+
+/* BOX STYLE */
+
+.quality-box{
+    width:220px;
+    text-align:center;
+}
+
+
+/* ICON STYLE */
+
+.quality-icon{
+    font-size:42px;
+    color:#555;
+    margin-bottom:15px;
+}
+
+
+/* TITLE */
+
+.quality-box h3{
+    font-size:16px;
+    font-weight:600;
+    margin-bottom:8px;
+}
+
+
+/* DESCRIPTION */
+
+.quality-box p{
+    font-size:13px;
+    color:#777;
+    line-height:1.5;
+}
+/* ================= QUALITY SECTION ================= */
+
+.quality{
+    background:#f8f9fb;
+    padding:60px 0;
+}
+
+
+/* CENTER THE ROW */
+
+.quality-row{
+    display:flex;
+    justify-content:center;   /* center horizontally */
+    align-items:flex-start;
+    gap:60px;                 /* space between boxes */
+}
+
+
+/* IMPORTANT: override grid float */
+
+.quality-row .col{
+    float:none !important;
+    width:auto !important;
+    margin:0 !important;
+}
+
+
+/* EACH BOX */
+
+.quality-box{
+    width:220px;
+    text-align:center;
+}
+
+
+/* ICON */
+
+.quality-icon{
+    font-size:42px;
+    color:#555;
+    margin-bottom:15px;
+}
+
+
+/* TITLE */
+
+.quality-box h3{
+    font-size:18px;
+    font-weight:600;
+    margin-bottom:10px;
+}
+
+
+/* TEXT */
+
+.quality-box p{
+    font-size:14px;
+    color:#777;
+}
+/* ================= COMMON CONTAINER ================= */
+
+.container{
+    width:100%;
+    max-width:1100px;
+    margin:0 auto;
+}
+
+
+
+/* ================= NEWSLETTER ================= */
+
+.newsletter{
+    width:100%;
+    padding:50px 0;
+    display:flex;
+    justify-content:center;
+}
+
+
+.newsletter-row{
+
+    width:100%;
+    max-width:1100px;    /* SAME as footer */
+
+    background: linear-gradient(90deg, #4facfe, #43b0f1);
+
+    padding:40px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+}
+
+
+/* LEFT */
+
+.newsletter-left h2{
+    color:white;
+    font-size:28px;
+    font-weight:600;
+}
+
+
+/* RIGHT */
+
+.newsletter-right{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+
+/* INPUT ROW */
+
+.newsletter-inputs{
+    display:flex;
+    gap:15px;
+}
+
+
+/* INPUT */
+
+.newsletter-inputs input{
+    padding:12px;
+    border:none;
+    outline:none;
+
+    background: rgba(255,255,255,0.2);
+
+    color:white;
+
+    width:180px;
+}
+
+
+.newsletter-inputs input::placeholder{
+    color:white;
+}
+
+
+/* BUTTON */
+
+.subscribe-btn{
+    background:white;
+    color:#4facfe;
+
+    border:none;
+
+    padding:12px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    width:200px;
+}
+
+
+
+
+/* ================= FOOTER ================= */
+
+.footer{
+
+    width:100%;
+    background:#f1f3f6;
+
+    display:flex;
+    justify-content:center;
+
+    padding:50px 0;
+}
+
+
+/* FOOTER ROW */
+
+.footer-row{
+
+    width:100%;
+    max-width:1100px;   /* SAME width as newsletter */
+
+    display:flex;
+    justify-content:space-between;
+
+}
+
+
+/* BOX */
+
+.footer-box{
+    width:220px;
+}
+
+
+/* LOGO */
+
+.footer-logo{
+    font-size:22px;
+    font-weight:bold;
+    margin-bottom:10px;
+}
+
+
+/* TEXT */
+
+.footer-text{
+    font-size:14px;
+    color:#777;
+    line-height:1.6;
+}
+
+
+/* LINKS */
+
+.footer-links{
+    list-style:none;
+    padding:0;
+}
+
+
+.footer-links li{
+    margin-bottom:6px;
+}
+
+
+.footer-links a{
+    text-decoration:none;
+    color:#777;
+    font-size:14px;
+}
+
+
+.footer-links a:hover{
+    color:#4facfe;
+}
+
+
+/* ICONS */
+
+.footer-icons{
+    display:flex;
+    gap:15px;
+    margin-top:10px;
+}
+
+
+.footer-icons i{
+    font-size:18px;
+    color:#555;
+    cursor:pointer;
+}
+
+
+.footer-icons i:hover{
+    color:#4facfe;
+}
+
+
+.footer-img{
+    height:40px;
+    margin-bottom:10px;
 }
