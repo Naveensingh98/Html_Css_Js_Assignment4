@@ -1,17 +1,21 @@
-// Initialize EmailJS (IMPORTANT)
+/* ================= EMAILJS INIT ================= */
+
 window.onload = function(){
 
 emailjs.init("fBhht2gNbC3DjBRC1");
 
-}
+};
 
 
+
+/* ================= CART SYSTEM ================= */
 
 let cart = [];
 let total = 0;
 
 
-// ADD / REMOVE ITEM FUNCTION
+
+// ADD / REMOVE ITEM
 
 function toggleItem(button, name, price){
 
@@ -67,55 +71,85 @@ document.getElementById("total").innerText = total;
 
 
 
-// EMAIL SEND FUNCTION (MAIN PART)
+/* ================= HERO SCROLL ================= */
 
-function sendEmail(){
+function scrollToBooking(){
 
-let name =
-document.querySelector('input[placeholder="Full Name"]').value;
-
-let email =
-document.querySelector('input[placeholder="Email ID"]').value;
-
-let phone =
-document.querySelector('input[placeholder="Phone Number"]').value;
-
-
-// validation
-
-if(name=="" || email=="" || phone==""){
-
-alert("Please fill all fields");
-
-return;
+document.getElementById("ser")
+.scrollIntoView({ behavior: "smooth" });
 
 }
 
 
-// services list
+
+/* ================= BOOKING VALIDATION + EMAIL ================= */
+
+function sendEmail(){
+
+let name =
+document.querySelector('input[placeholder="Full Name"]').value.trim();
+
+let email =
+document.querySelector('input[placeholder="Email ID"]').value.trim();
+
+let phone =
+document.querySelector('input[placeholder="Phone Number"]').value.trim();
+
+
+/* ===== VALIDATION ===== */
+
+if(name === ""){
+alert("Please enter your full name");
+return;
+}
+
+if(email === ""){
+alert("Please enter your email address");
+return;
+}
+
+let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+if(!email.match(emailPattern)){
+alert("Please enter a valid email address");
+return;
+}
+
+if(phone === ""){
+alert("Please enter your phone number");
+return;
+}
+
+if(phone.length !== 10 || isNaN(phone)){
+alert("Phone number must be 10 digits");
+return;
+}
+
+if(cart.length === 0){
+alert("Please select at least one service");
+return;
+}
+
+
+/* ===== PREPARE DATA ===== */
 
 let services =
 cart.map(item => item.name).join(", ");
 
-
-// params to send
-
 let params = {
-
 name: name,
 email: email,
 phone: phone,
 services: services,
 total: total
-
 };
 
 
-// send email
+/* ===== SEND EMAIL ===== */
 
 emailjs.send("service_ny5bvpl","template_3yrczp3",params)
 
-.then(function(response){
+.then(function(){
 
 document.getElementById("successMsg").innerText =
 "Thank you For Booking the Service We will get back to you soon!";
